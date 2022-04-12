@@ -1,0 +1,23 @@
+---
+title: "Assign9markdown"
+author: "Sage Caballero"
+date: "4/3/2022"
+output: html_document
+---
+```{r}
+#load Dataset
+library(readxl)
+> DessertsDat <- read_excel("~/DessertsDat.xlsx")
+> View(DessertsDat)
+```
+
+```{r}
+#summarize data
+DessertsDat$Dessert<- as.factor(DessertsDat$Dessert)
+summary(DessertsDat)
+```
+
+```{r}
+#graph the data
+ggplot(DessertsDat, aes(Rating, Quantity, color=Dessert))+geom_point(size= 3)+theme_classic()+ylab("Quantity in Portion Size")
+```
